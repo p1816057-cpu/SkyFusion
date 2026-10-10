@@ -7,7 +7,7 @@
 [![Platform](https://img.shields.io/badge/platform-Windows%207%20SP1%20%E2%86%92%2011-111827)](#系统要求)
 [![.NET](https://img.shields.io/badge/.NET%20Framework-4.8-512bd4)](#系统要求)
 [![Offline](https://img.shields.io/badge/%E7%A6%BB%E7%BA%BF-100%25%20local-dc2626)](#技术栈与设计约束)
-[![Download](https://img.shields.io/badge/download-Releases-16a34a?logo=github)](https://github.com/p1816057-cpu/-/releases/latest)
+[![Download](https://img.shields.io/badge/download-Releases-16a34a?logo=github)](https://github.com/p1816057-cpu/SkyFusion/releases/latest)
 
 天融（SkyFusion）是一款 **完全离线的 Windows 桌面格式转换工具**：音频转换、图片转换与压缩，
 本地调用 FFmpeg 7.0，不联网、不注入、无后台服务，兼容 Windows 7 SP1 x64 到 Windows 11。
@@ -53,7 +53,7 @@
 
 ## 下载与使用
 
-**下载地址：<https://github.com/p1816057-cpu/-/releases/latest>**（也可以从仓库右侧的 Releases 进入）
+**下载地址：<https://github.com/p1816057-cpu/SkyFusion/releases/latest>**（也可以从仓库右侧的 Releases 进入）
 
 - **便携版**：下载 `SkyFusion-v1.2.1-Win10-11-portable.zip`，解压后双击 `SkyFusion.exe` 即可，无需安装；
 - **安装版**：下载 `SkyFusion-Setup-1.2.1.exe`，按向导安装，可在「应用和功能」里卸载。
@@ -99,7 +99,7 @@ src/AudioConverter/
 ├─ Data/                  JSON 轻量持久化
 ├─ Models/                领域模型与枚举
 └─ Assets/                程序图标（app.ico / app-logo.png）
-docs/                     架构、版本、验收、开发提示词与使用说明
+docs/                     技术文档（完整）、架构、版本、验收、开发提示词与使用说明
 scripts/                  Inno Setup 安装脚本、签名脚本
 tools/ffmpeg/bin/         FFmpeg 运行文件（构建时复制，不入库）
 ```
@@ -110,6 +110,12 @@ tools/ffmpeg/bin/         FFmpeg 运行文件（构建时复制，不入库）
 - 历史：`%APPDATA%\AudioConverter\history.json`
 - 日志：`%APPDATA%\AudioConverter\logs\app.log`
 - 转换结果：默认在程序目录下的 `转换输出`（见上文"输出位置"）
+
+## 文档
+
+- **[完整技术文档](docs/技术文档.md)**：产品定位、技术栈、架构分层、转换内核、UI 设计规范（色板 / 字体 / 控件 / 弹窗 / 动效）、数据模型、打包发布与验收标准
+- **[通用开发模板](templates/README.md)**：给新项目用的两套 AI 协作契约 —— 自主决策版（懒人版，AI 定细节、重大变更必问）与需求确认版（精细版，95% 需求确认、零臆测）
+- [架构说明](docs/ARCHITECTURE.md) · [版本记录](docs/VERSIONS.md) · [验收清单](docs/ACCEPTANCE.md) · [误报处理](docs/ANTIVIRUS.md) · [开发提示词](docs/开发提示词.md)
 
 ## 技术栈与设计约束
 
