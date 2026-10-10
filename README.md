@@ -56,7 +56,9 @@
 **下载地址：<https://github.com/p1816057-cpu/SkyFusion/releases/latest>**（也可以从仓库右侧的 Releases 进入）
 
 - **便携版**：下载 `SkyFusion-v1.2.1-Win10-11-portable.zip`，解压后双击 `SkyFusion.exe` 即可，无需安装；
-- **安装版**：下载 `SkyFusion-Setup-1.2.1.exe`，按向导安装，可在「应用和功能」里卸载。
+- **安装版**：下载 `SkyFusion-Setup-1.2.1.exe`，按向导安装（中英文双语向导），可在「应用和功能」里卸载。
+
+> 安装版为 Windows 10 / 11 专用，不捆绑 .NET Framework 4.8 离线安装包；Windows 7 用户请用便携版，并按系统要求自行准备 .NET 4.8 与三个补丁。
 
 详细步骤见 [`docs/使用说明-便携版-Win10-11.txt`](docs/使用说明-便携版-Win10-11.txt)。
 
@@ -84,6 +86,17 @@ src/AudioConverter/bin/Release/net48/ffmpeg/bin/ffprobe.exe
 
 FFmpeg 放在 `tools/ffmpeg/bin/`（未纳入版本控制），构建时会自动复制到输出目录。
 
+### 打包安装版
+
+需要 [Inno Setup 6](https://jrsoftware.org/isinfo.php)：
+
+```powershell
+ISCC.exe scripts\SkyFusion.iss
+```
+
+输出 `dist\SkyFusion-Setup-<版本>.exe`。脚本内 `BundleDir` 指向的离线包目录必须与版本号一致，
+详见 [`scripts/SkyFusion.iss`](scripts/SkyFusion.iss) 顶部注释；安装向导为英文（默认）+ 简体中文双语。
+
 ## 目录结构
 
 ```
@@ -101,6 +114,7 @@ src/AudioConverter/
 └─ Assets/                程序图标（app.ico / app-logo.png）
 docs/                     技术文档（完整）、架构、版本、验收、开发提示词与使用说明
 scripts/                  Inno Setup 安装脚本、签名脚本
+scripts/languages/        安装向导简体中文语言文件（Inno Setup 官方不含）
 tools/ffmpeg/bin/         FFmpeg 运行文件（构建时复制，不入库）
 ```
 

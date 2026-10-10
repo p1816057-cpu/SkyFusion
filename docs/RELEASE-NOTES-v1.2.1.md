@@ -57,12 +57,16 @@
 SkyFusion-v1.2.1-Win10-11-portable.zip
 6AB541EB2C158640A7FA6DADE22269A4F96197C2252FBFE997A41FDF29D982EB
 
+SkyFusion-Setup-1.2.1.exe
+003BFE3096DF148FC94BA2EE28F45156D0903FE8C2397A32486C9BCAC0395F0E
+
 SkyFusion.exe（压缩包内主程序）
 49722C7D714D3C1EB6F7EC436DA210456569DB5C8022CF08E5D6F77560B8CD43
 ```
 
 ## 说明
 
+- 安装版为 **Windows 10 / 11 专用**，不捆绑 .NET Framework 4.8 离线安装包；Win7 用户请使用便携版并按需自备 .NET 4.8 与三个 KB 补丁
 - 程序以独立进程方式调用 FFmpeg 7.0（GPLv3），发布包内含 FFmpeg 许可与说明
 - 未做数字签名，个别安全软件可能误报，添加信任即可
 - 图标（.ico）转换功能尚未实现，正在评估中

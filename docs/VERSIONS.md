@@ -36,6 +36,16 @@
 - 版本号改为单一来源：`Common/AppInfo.cs` 从程序集 `InformationalVersion` 读取，界面、启动日志、诊断导出统一取用
 - 同步更新 `docs/开发提示词.md`、`docs/ARCHITECTURE.md`、`docs/VERSIONS.md`
 
+### 打包（补充修复）
+
+- 修复 `scripts/SkyFusion.iss` 打包源目录错误：原先指向 `dist\SkyFusion-Win7-Audio`（v1.1.0 旧包），
+  会让标称 1.2.1 的安装包装出 1.1.0 的程序；现改为 `dist\天融SkyFusion-v1.2.1-Win10-11离线版`
+- 安装包补入此前缺失的 `LICENSE` 与 `THIRD-PARTY-NOTICES.md`
+- 新增安装向导简体中文（`scripts/languages/ChineseSimplified.isl`），英文为默认、中文可选；编译 0 警告
+- 安装版定位 Win10/11 免运行时，默认不捆绑 .NET Framework 4.8（约 44 MB），
+  `.iss` 内保留 `BundleDotNet48` 开关可切回捆绑版
+- 产出 `SkyFusion-Setup-1.2.1.exe` 并上传至 GitHub Release
+
 ## v1.1.0（已发布）
 
 - 新增图片压缩模块：支持 JPG/PNG/WebP/BMP 输入，WebP/JPG/PNG 输出
